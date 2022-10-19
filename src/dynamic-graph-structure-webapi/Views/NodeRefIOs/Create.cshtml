@@ -1,0 +1,47 @@
+﻿@model DynamicGraphStructure.WebApi.Database.Models.NodeRefIO
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>NodeRefIO</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Index" class="control-label"></label>
+                <input asp-for="Index" class="form-control" />
+                <span asp-validation-for="Index" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NodeId" class="control-label"></label>
+                <select asp-for="NodeId" class ="form-control" asp-items="ViewBag.NodeId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypeRef" class="control-label"></label>
+                <input asp-for="TypeRef" class="form-control" />
+                <span asp-validation-for="TypeRef" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataRef" class="control-label"></label>
+                <input asp-for="DataRef" class="form-control" />
+                <span asp-validation-for="DataRef" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
